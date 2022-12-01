@@ -1,7 +1,9 @@
 # LOL_Card_Master_Auto_Select_Card
 Automatic card selection based on autohotkey
-The app was previously posted on Bilibili.com, but was taken down due to issues with game script review. By the time it was removed, it had received nearly 3w of views in two days
+
 因为该脚本基于autohotkey的取色函数，所以只是检测屏幕上当前活动界面的某个坐标点的RGB颜色信息，因此对系统的开销很小。实测，极小概率会出现的选错牌事件。
+
+The app was previously posted on Bilibili.com, but was taken down due to issues with game script review. By the time it was removed, it had received nearly 3w of views in two days
 
 ## 使用说明
 1.环境要求：
