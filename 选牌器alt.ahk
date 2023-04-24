@@ -1,6 +1,7 @@
 ﻿MsgBox, [ 卡牌选牌器, 注意使用管理员方式启动！alt+1、2、3分别对应蓝红黄牌]
+MsgBox, [ 请将游戏窗口调整到 1920*1080 的无边框模式，并将用户界面缩放调整至35]
 
-!3::
+~!3::
 PixelGetColor,check_color,856,1005,RGB
 If(check_color = 0xD49171)
     {
@@ -17,7 +18,7 @@ If(check_color = 0xD49171)
 return
 
 
-!2::
+~!2::
 PixelGetColor,check_color,856,1005,RGB
 If(check_color = 0xD49171)
     {
@@ -34,7 +35,7 @@ If(check_color = 0xD49171)
 return
 
 
-!1::
+~!1::
 PixelGetColor,check_color,856,1005,RGB
 If(check_color = 0xD49171)
     {

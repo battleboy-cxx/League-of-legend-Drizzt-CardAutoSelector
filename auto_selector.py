@@ -3,17 +3,12 @@ import win32api
 import win32con
 import time
 from config import *
+from func import *
+
 
 def press_key(key):
     win32api.keybd_event(key, 0, 0, 0)
     win32api.keybd_event(key, 0, win32con.KEYEVENTF_KEYUP, 0)
-
-
-def get_pixel_color(x, y):
-    dc = win32gui.GetDC(0)
-    color = win32gui.GetPixel(dc, x, y)
-    win32gui.ReleaseDC(0, dc)
-    return color
 
 
 def press_blue_card():
@@ -28,6 +23,7 @@ def press_blue_card():
             time.sleep(0.1)
             if get_pixel_color(target_x, target_y) == color_dict["blue"]:
                 press_key(0x57)  # "W"
+                print("选定蓝牌")
                 break
 
 
@@ -43,6 +39,7 @@ def press_red_card():
             time.sleep(0.1)
             if get_pixel_color(target_x, target_y) == color_dict["red"]:
                 press_key(0x57)  # "W"
+                print("选定红牌")
                 break
 
 
@@ -59,6 +56,7 @@ def press_yellow_card():
             time.sleep(0.1)
             if get_pixel_color(target_x, target_y) == color_dict["yellow"]:
                 press_key(0x57)  # "W"
+                print("选定黄牌")
                 break
 
 
@@ -79,6 +77,10 @@ def main():
     win32gui.RegisterHotKey(None, 1, win32con.MOD_ALT, press_blue_card_hotkey)
     win32gui.RegisterHotKey(None, 2, win32con.MOD_ALT, press_red_card_hotkey)
     win32gui.RegisterHotKey(None, 3, win32con.MOD_ALT, press_yellow_card_hotkey)
+    # 空格键
+
+
+
     try:
         while True:
             msg = win32gui.GetMessage(None, 0, 0)

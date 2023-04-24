@@ -9,14 +9,7 @@ import pyscreeze
 import win32gui
 from PIL import ImageGrab
 from config import *
-
-
-def get_pixel_color(x, y):
-    dc = win32gui.GetDC(0)
-    color = win32gui.GetPixel(dc, x, y)
-    win32gui.ReleaseDC(0, dc)
-    return color
-
+from func import *
 
 if __name__ == '__main__':
     last_color = 0
